@@ -6,9 +6,13 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = 'T14' # Only 10 chars displayed.
+strategy_name = 'Four Move Loop'
+strategy_description = '''Collude first move, play opponents move for second. 
+                        If first two all collusions, repeat strategy. If second 
+                        move is a mix, collude for next two unless opponent 
+                        betrays on two and three then betray on fourth. For all 
+                        other cases, betray on three and four. Repeat.'''
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
