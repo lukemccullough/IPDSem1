@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -6,9 +7,13 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = '∆v = ∫t1, [t0 |T(t)|/m(t)] * dt #7' # Only 10 chars displayed.
+strategy_name = 'Mimic if betrayed, Betray 15 Percent'
+strategy_description = '''The first 3 times, collude. 
+If their_score positive or higher than mine, betray first time. If they
+Haven't betrayed, then betray 15 percent of the time. Collude the rest. Check
+after 10 rounds, if betrayed, mimic for next 10 rounds
+'''
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -25,8 +30,8 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
+    if len(their_history) <= 4:
+        return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
