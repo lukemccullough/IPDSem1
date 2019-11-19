@@ -8,11 +8,12 @@
 ####
 
 team_name = '∆v = ∫t1, [t0 |T(t)|/m(t)] * dt #7' # Only 10 chars displayed.
-strategy_name = 'Mimic if betrayed, Betray 15 Percent'
-strategy_description = '''The first 3 times, collude. 
+strategy_name = 'Mimic if betrayed, Betray 5 Percent'
+strategy_description = '''The first 2 times, collude. 
 If their_score positive or higher than mine, betray first time. If they
 Haven't betrayed, then betray 15 percent of the time. Collude the rest. Check
-after 10 rounds, if betrayed, mimic for next 10 rounds
+past 4 rounds, if betrayed, mimic for next 10 rounds. If alternates, always 
+return betray
 '''
     
 def move(my_history, their_history, my_score, their_score):
@@ -30,8 +31,25 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    if len(their_history) <= 4:
+    
+    pround = their_history[-1]
+    rounds = 0
+    
+    if len(their_history) <= 2:
         return 'c'
+    if 'b' in their_history[-4:]:
+        if their_history[-3] and their_history[-1] or their_history[-4] and their_history[-2] == 'b':
+            return 'b'
+        else:
+            rounds += 10
+            while rounds > 0:
+                rounds += -1
+                return pround
+    else:
+        if random.random()<0.05:
+            return 'b'
+        else:
+            return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
@@ -58,7 +76,7 @@ if __name__ == '__main__':
               my_score=0,
               their_score=0,
               result='b'):
-         print 'Test passed'
+         print('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
               their_history='ccc', 
