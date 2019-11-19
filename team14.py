@@ -19,16 +19,10 @@ def move(my_history, their_history, my_score, their_score):
         return 'c'
     if len(my_history) == 1:
         return their_history[-1]
-    if 'c' in my_history[0,1] and their_history[0,1]:
-         return 'c'
-    if 'b' in my_history[1] and 'c' in their_history[1]:
+    if 'c' in their_history[0] and their_history[1]:
         return 'c'
-    if 'b' in my_history[1] and 'c' in my_history[2]:
-        return 'c'
-    if 'c' in my_history[1] and 'b' in their_history[1]:
-        return 'c'
-    if 'b' in their_history[1,2]:
-        return 'b'
+    if 'c' in my_history[0] and my_history[1] and my_history[2]:
+        return their_history[-1]
     
     
         
