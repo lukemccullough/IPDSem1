@@ -18,16 +18,16 @@ def move(my_history, their_history, my_score, their_score):
     if len(my_history) == 0:  
         return 'c'
     if len(my_history) == 1:
-        return 'b'
+        return 'c'
     for item in range(len(their_history)):
         if item == 'c':
             totalc += 1
         else:
             totalb += 1
     if totalc >= totalb:
-        return 'c'
-    else:
         return 'b'
+    else:
+        return 'c'
             
         
     
