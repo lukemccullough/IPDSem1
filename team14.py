@@ -7,22 +7,30 @@
 ####
 
 team_name = 'T14' # Only 10 chars displayed.
-strategy_name = 'Four Move Loop'
-strategy_description = '''Collude first move, play opponents move for second. 
-                        If first two all collusions, repeat strategy. If second 
-                        move is a mix, collude for next two unless opponent 
-                        betrays on two and three then betray on fourth. For all 
-                        other cases, betray on three and four. Repeat.'''
+strategy_name = 'Collude if Majority'
+strategy_description = '''Collude first move, betray on second. Then collude if 
+                          the opponent's number of collusions are greater than 
+                          or equal to their betrayals. Else, betray.'''
     
 def move(my_history, their_history, my_score, their_score):
+    totalc = 0
+    totalb = 0
     if len(my_history) == 0:  
         return 'c'
     if len(my_history) == 1:
-        return their_history[-1]
-    if 'c' in their_history[0] and their_history[1]:
+        return 'b'
+    for item in range(len(their_history)):
+        if item == 'c':
+            totalc += 1
+        else:
+            totalb += 1
+    if totalc >= totalb:
         return 'c'
-    if 'c' in my_history[0] and my_history[1] and my_history[2]:
-        return their_history[-1]
+    else:
+        return 'b'
+            
+        
+    
     
     
         
