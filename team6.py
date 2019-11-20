@@ -7,7 +7,7 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'クリスティーナ 6' # Only 10 chars displayed.
+team_name = 'Christinaaaa 6' # Only 10 chars displayed.
 strategy_name = 'Mainly betraying'
 strategy_description = '''
 At the beginning, collude.
@@ -31,7 +31,6 @@ def move(my_history, their_history, my_score, their_score):
        
 
 
-        
 
 
 
