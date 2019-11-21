@@ -7,27 +7,17 @@
 ####
 
 team_name = 'T14' # Only 10 chars displayed.
-strategy_name = 'Collude if Majority'
-strategy_description = '''Collude first move, betray on second. Then collude if 
-                          the opponent's number of collusions are greater than 
-                          or equal to their betrayals. Else, betray.'''
+strategy_name = 'Collude then First Move'
+strategy_description = 'Collude for first 25 moves, then use first move.'
     
 def move(my_history, their_history, my_score, their_score):
-    totalc = 0
-    totalb = 0
     if len(my_history) == 0:  
         return 'c'
-    if len(my_history) == 1:
-        return 'c'
-    for item in range(len(their_history)):
-        if item == 'c':
-            totalc += 1
-        else:
-            totalb += 1
-    if totalc >= totalb:
-        return 'b'
+    if len(my_history) >= 25:
+        return their_history[1]
     else:
         return 'c'
+    
             
         
     
