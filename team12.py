@@ -5,8 +5,7 @@
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
 ####
-
-team_name = '12haha_yeah_boy' 
+team_name = '12haha_yeah_man' 
 strategy_name = c if then b
 strategy_description =  Collude for the first ronud then look at thier history and if they betray then I will betray for the rest of the ronuds.  
     
@@ -80,3 +79,5 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
+              
+              
