@@ -5,7 +5,7 @@
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
 ####
-team_name = '12haha_yeah_man' 
+team_name = 'haha_yeah_man' 
 strategy_name = 'noes'
 strategy_description = 'Collude for the first ronud then look at thier history and if they betray then I will betray for the rest of the ronuds.'  
     
@@ -27,7 +27,7 @@ def move(my_history, their_history, my_score, their_score):
    
     if len(my_history) == 0:
         return 'c'
-     else:
+    else:
         recent_round_them = their_history[-1]
         recent_round_me = my_history[-1]
         for round in range(len(my_history)-1):
@@ -40,8 +40,8 @@ def move(my_history, their_history, my_score, their_score):
         # No match found
         if my_history[-1]=='c' and their_history[-1]=='b':
             return 'b'
-    else:
-        return 'c'
+        else:
+            return 'c'
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
@@ -66,7 +66,7 @@ if __name__ == '__main__':
               my_score=0,
               their_score=0,
               result='b'):
-         print 'Test passed'
+         print('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
               their_history='ccc', 
