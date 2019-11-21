@@ -1,4 +1,4 @@
-from __future__ import print_function
+from importlib import reload
 import random
 import os.path 
 ##### 
@@ -31,8 +31,7 @@ import os.path
 # scores, moves, reports = main_play([team1]*3+[example1])
 # section0, section1, section2, section3 = reports
 #######
-import random
-import os.path              
+             
     
 import example0, example1, example2, example3
 import example4, example5, example6, example7
