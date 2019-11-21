@@ -6,8 +6,8 @@
 #     move: A function that returns 'c' or 'b'
 ####
 team_name = '12haha_yeah_man' 
-strategy_name = c if then b
-strategy_description =  Collude for the first ronud then look at thier history and if they betray then I will betray for the rest of the ronuds.  
+strategy_name = 'noes'
+strategy_description = 'Collude for the first ronud then look at thier history and if they betray then I will betray for the rest of the ronuds.'  
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
