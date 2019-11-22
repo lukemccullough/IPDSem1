@@ -1,6 +1,9 @@
 from importlib import reload
 import random
+
 import os.path
+
+
 ##### 
 # Computer Science and Software Engineering
 # PLTW AP CS Principles
@@ -31,10 +34,10 @@ import os.path
 # scores, moves, reports = main_play([team1]*3+[example1])
 # section0, section1, section2, section3 = reports
 #######
-import random
-import os.path              
+             
     
 import example0, example1, example2, example3
+
 import example4, example5, example6, example7, example8
 import team7
 betray = example1
@@ -42,6 +45,8 @@ collude = example0
 
 modules = [example0, example1, example2, example3, example4, example5, 
     example6, example7, example8, team7]
+
+
 for module in modules:
     reload(module)
     print ('reloaded',module)
